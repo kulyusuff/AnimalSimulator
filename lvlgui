@@ -1,0 +1,98 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local LvL = Instance.new("TextLabel")
+local Dev = Instance.new("TextLabel")
+local R1 = Instance.new("TextButton")
+local R2 = Instance.new("TextButton")
+
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, -0.116504855, 0)
+Frame.Size = UDim2.new(1, 0, 1.11650491, 0)
+
+LvL.Name = "LvL"
+LvL.Parent = Frame
+LvL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LvL.BackgroundTransparency = 1.000
+LvL.Position = UDim2.new(0.417051107, 0, 0.514913023, 0)
+LvL.Size = UDim2.new(0.16423358, 0, 0.0730434805, 0)
+LvL.Font = Enum.Font.Gotham
+LvL.Text = "Level : "
+LvL.TextColor3 = Color3.fromRGB(255, 255, 255)
+LvL.TextScaled = true
+LvL.TextSize = 14.000
+LvL.TextWrapped = true
+
+Dev.Name = "Dev"
+Dev.Parent = Frame
+Dev.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Dev.BackgroundTransparency = 1.000
+Dev.Position = UDim2.new(-0.000832112157, 0, 0.961869597, 0)
+Dev.Size = UDim2.new(0.0948102102, 0, 0.0381304137, 0)
+Dev.Font = Enum.Font.Gotham
+Dev.Text = "Yapımcı : kulyusuf#1921"
+Dev.TextColor3 = Color3.fromRGB(255, 255, 255)
+Dev.TextScaled = true
+Dev.TextSize = 14.000
+Dev.TextWrapped = true
+
+R1.Name = "R1"
+R1.Parent = Frame
+R1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+R1.BackgroundTransparency = 1.000
+R1.Position = UDim2.new(0.882328451, 0, 0.948043466, 0)
+R1.Size = UDim2.new(0.117671549, 0, 0.0519565232, 0)
+R1.Font = Enum.Font.Gotham
+R1.Text = "Rejoin"
+R1.TextColor3 = Color3.fromRGB(255, 255, 255)
+R1.TextScaled = true
+R1.TextSize = 14.000
+R1.TextWrapped = true
+
+R2.Name = "R2"
+R2.Parent = Frame
+R2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+R2.BackgroundTransparency = 1.000
+R2.Position = UDim2.new(0.764627695, 0, 0.948043466, 0)
+R2.Size = UDim2.new(0.117671549, 0, 0.0519565232, 0)
+R2.Visible = false
+R2.Font = Enum.Font.Gotham
+R2.Text = "Emin Misin?"
+R2.TextColor3 = Color3.fromRGB(255, 255, 255)
+R2.TextScaled = true
+R2.TextSize = 14.000
+R2.TextWrapped = true
+
+
+local function OFPA_fake_script()
+	local script = Instance.new('LocalScript', LvL)
+
+	while wait(0.1) do
+		script.Parent.Text = "Seviye: "..game.Players.LocalPlayer.leaderstats.Level.Value
+	end
+end
+coroutine.wrap(OFPA_fake_script)()
+local function EKJRXTK_fake_script()
+	local script = Instance.new('LocalScript', R1)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.R2.Visible = true
+		wait(3)
+		script.Parent.Parent.R2.Visible = false
+	end)
+end
+coroutine.wrap(EKJRXTK_fake_script)()
+local function JEICTG_fake_script()
+	local script = Instance.new('LocalScript', R2)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer:Kick("Yeniden Giriliyor")
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+	end)
+end
+coroutine.wrap(JEICTG_fake_script)()
