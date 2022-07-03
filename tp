@@ -1,0 +1,4 @@
+local Character = game.Players.LocalPlayer.Character
+Character.HumanoidRootPart.CFrame = CFrame.new(-60.383, 3, 26975.232)
+wait(0.5)
+Character.HumanoidRootPart.Anchored = true
